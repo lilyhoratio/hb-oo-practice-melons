@@ -42,7 +42,7 @@ def make_melon_types():
     casaba.add_pairing(["strawberries","mint"])
     crenshaw = MelonType("cren", 1996, "green", True, False, "crenshaw")
     crenshaw.add_pairing("proscuitto")
-    yellow_watermelon = MelonType("yw", 2013, "yellow", True, True, "yellow_watermelon")
+    yellow_watermelon = MelonType("yw", 2013, "yellow", True, True, "yellow watermelon")
     yellow_watermelon.add_pairing("ice cream")
 
     # Fill in the rest
@@ -52,12 +52,28 @@ def make_melon_types():
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
 
+    for melon in melon_types:
+        pairing_string = ""
+        for pairingtype in melon.pairings:
+            pairing_string += f"\n- {pairingtype}"
+        print(f"{melon.name} pairs well with {pairing_string}\n")
     # Fill in the rest
+
+# print_pairing_info(make_melon_types())
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
 
     # Fill in the rest
+    melon_code = {}
+
+    for melon in melon_types:
+        # melon_code.add({melon.code: melon})
+        melon_code[melon_code] = melon
+
+    return melon_code  
+
+print(make_melon_type_lookup(make_melon_types()))
 
 ############
 # Part 2   #
