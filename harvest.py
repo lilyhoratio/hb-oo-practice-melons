@@ -48,6 +48,7 @@ def make_melon_types():
     # Fill in the rest
     all_melon_types = [muskmelon, casaba, crenshaw, yellow_watermelon]
     return all_melon_types
+print(make_melon_types())
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
@@ -68,8 +69,7 @@ def make_melon_type_lookup(melon_types):
     melon_code = {}
 
     for melon in melon_types:
-        # melon_code.add({melon.code: melon})
-        melon_code[melon_code] = melon
+        melon_code[melon.code] = melon.name
 
     return melon_code  
 
@@ -84,6 +84,9 @@ class Melon(object):
 
     # Fill in the rest
     # Needs __init__ and is_sellable methods
+    def __init__(self, melon_type, shape_rating, 
+        color_rating, field_num, harvested_by):
+        
 
 def make_melons(melon_types):
     """Returns a list of Melon objects."""
